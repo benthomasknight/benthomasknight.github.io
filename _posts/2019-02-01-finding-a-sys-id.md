@@ -6,7 +6,7 @@ Every now and then I run in to the problem of having a sys_id without any identi
 
 Here is a script to help find what you need.
 
-```JavaScript
+{% highlight javascript %}
 gs.log(findAnywhere('8bcd5703dbd8a300715833f43a9619df'));
 
 function findAnywhere(asysid, html) {
@@ -41,4 +41,4 @@ function findAnywhere(asysid, html) {
     }
   }
 }
-```
+{% endhighlight %}

@@ -20,14 +20,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Miscellaneous ramblings from day to day.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://benthomasknight.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username:
+# twitter_username:
 github_username:  benthomasknight
 repository: benthomasknight/benthomasknight.github.io
-breadcrumbs: true
 
 # Build settings
 markdown: kramdown
-# theme: minimal-mistakes-jekyll
+theme: minimal-mistakes-jekyll
 remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-feed
@@ -58,6 +57,18 @@ defaults:
       share: true
       related: true
 
+author:
+  name: Ben Knight
+  bio: Software Developer
+  location: Hobart, Tasmania
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/benthomasknight"
+    - label: "RXP Group"
+      icon: "fas fa-fw fa-building"
+      url: "https://rxpservices.com/"
+
 # Pagination
-paginate: 1 # amount of posts to show
+paginate: 5 # amount of posts to show
 paginate_path: /page-:num/
