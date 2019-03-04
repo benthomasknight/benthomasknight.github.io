@@ -66,7 +66,5 @@ class Renderer {
 }
 {% endhighlight %}
 
-## Expectations
-
 
 {% include category-list.md ordered=true category=site.categories.design-patterns %}
