@@ -4,7 +4,7 @@
 <ul>
 {% endif %}
 
-{% assign sorted = include.category | sort:"date" %}
+{% assign sorted = include.category | reverse %}
 {% for post in sorted %}
   <li>
     {% if page.url != post.url %}

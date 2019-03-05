@@ -5,7 +5,7 @@ categories: [design-patterns]
 tags: [design-patterns, programming, interfaces]
 ---
 
-Interfaces are one of the most basic tools in programming. All they do is say to the compliler *I expect all objects of this type to have these* without detailing the specifics of what *these* are. They describe what an object is expected to have but not the specifics of the implementation.
+Interfaces are one of the most basic tools in TypeScript programming. All they do is say to the compliler *I expect all objects of this type to have these propertese/methods* without detailing the specifics of what *these* are. They describe what an object is expected to have but not the specifics of the implementation.
 
 For instance, below are two classes implementing the same interface. Class A will *throw a compiler error* but Class B will compile correctly. This is because the interface says that it expects the **MyExpectedFunction** to exist but it didn't find it. You will also notice that you cand define properties that may *exist*.
 
@@ -65,6 +65,5 @@ class Renderer {
   }
 }
 {% endhighlight %}
-
 
 {% include category-list.md ordered=true category=site.categories.design-patterns %}
