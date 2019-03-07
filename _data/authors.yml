@@ -1,0 +1,12 @@
+Ben Knight:
+  name: Ben Knight
+  bio: Software Developer
+  avatar: "/assets/images/code.png"
+  location: Hobart, Tasmania
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/benthomasknight"
+    - label: "RXP Group"
+      icon: "fas fa-fw fa-building"
+      url: "https://rxpservices.com/"

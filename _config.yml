@@ -51,23 +51,12 @@ defaults:
       type: posts
     values:
       layout: single
+      author: Ben Knight
       author_profile: true
       read_time: true
       comments: true
       share: true
       related: true
-
-author:
-  name: Ben Knight
-  bio: Software Developer
-  location: Hobart, Tasmania
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/benthomasknight"
-    - label: "RXP Group"
-      icon: "fas fa-fw fa-building"
-      url: "https://rxpservices.com/"
 
 # Pagination
 paginate: 5 # amount of posts to show
