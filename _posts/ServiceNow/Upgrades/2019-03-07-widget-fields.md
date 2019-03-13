@@ -78,7 +78,7 @@ So we have our schema but we have not told the widget how to actually render it 
 
 {% highlight html %}
 <div class="panel">
-  <div class="panel-heading">{{c.g_form.getLabel(c.field.name)}}</div>
+  <div class="panel-heading">{% raw %}{{c.g_form.getLabel(c.field.name)}}{% endraw %}</div>
   <table class="table">
     <thead>
       <tr>
@@ -173,3 +173,4 @@ Now that we have this base code we can pretty much add anything we want. Some go
 ## The Warning
 
 Please note that these are not currently documented is the documentation (Up to Madrid) so the variables may change and have done so previously. There isn't anything we can do about it so hopefully ServiceNow bring out an official way of doing this soon!
+{: .notice--danger}
