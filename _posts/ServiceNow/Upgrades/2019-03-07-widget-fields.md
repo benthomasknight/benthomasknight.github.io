@@ -17,10 +17,10 @@ For example, lets say you are required to make a table variable (pre-madrid wher
 
 Turns out you have access to the both the field the widget is on and the g_form through variables on the $scope. These are found at:
 
-```
+{% highlight javascript %}
 c.g_form = $scope.page.g_form;
 c.field = $scope.page.field;
-```
+{% endhighlight %}
 
 With access to these two bits of information we now have a way to start creating some configurable options. All we need now is the macro field and a hidden field that can save the value (Macro fields do not have values).
 
@@ -28,7 +28,7 @@ With access to these two bits of information we now have a way to start creating
 
 In order to have a configurable format for our tables we will need to decide on an agreed schema for defining tables. There are various ways we can do this, from creating a new table to store the columns to using the default value. For this example we will use the default value of our variable with the following schema.
 
-```
+{% highlight json %}
 {
   "label":"<Display Label>",
   "columns":[{
@@ -38,11 +38,11 @@ In order to have a configurable format for our tables we will need to decide on 
   }],
   "field":"<Hidden Field to Store Value>"
 }
-```
+{% endhighlight %}
 
 Lets say we have a table with three columns. A string field called Name; A number field called Qty; and a checkbox called Confirmed. This is what we can put in the default value for the macro.
 
-```
+{% highlight json %}
 {
   "label":"Order Form",
   "columns":[{
@@ -60,7 +60,7 @@ Lets say we have a table with three columns. A string field called Name; A numbe
   }],
   "field":"my_hidden_field"
 }
-```
+{% endhighlight %}
 
 We have used inbuilt HTML 5 types in this schema to simplify the implementation but you are also able to create your own more complex implementation if required. Just change the "type" key and handle the case in the widget HTML.
 
@@ -68,14 +68,14 @@ We have used inbuilt HTML 5 types in this schema to simplify the implementation 
 
 So now we have the required configurable schema we need to make our widget handle it. First we want to make sure we grab the schema of the variable on load of our widget. This is simply using the g_form with our variable name.
 
-```
+{% highlight javascript %}
 /* Get our schema as a javascript object */
 c.schema = JSON.parse(c.g_form.getValue(c.field.name));
-```
+{% endhighlight %}
 
 So we have our schema but we have not told the widget how to actually render it out yet. Lets do that now.
 
-```
+{% highlight html %}
 <div class="panel">
   <div class="panel-heading">{{c.g_form.getLabel(c.field.name)}}</div>
   <table class="table">
@@ -96,21 +96,21 @@ So we have our schema but we have not told the widget how to actually render it 
     </tbody>
   </table>
 </div>
-```
+{% endhighlight %}
 
 Success! We now have ourtable rendering with the correct fields displaying, and I even threw in so bootstrap classes to help get the style in line with the other fields on the page.
 
 There is only one thing left to do now. Lets get the table adding and removing values. To do this we will add a place to store the data in our schema.
 
-```
+{% highlight json %}
 {
   "rows":[]
 }
-```
+{% endhighlight %}
 
 Now we have a place to store this data, lets allow it to have values saved there. I will change the HTML as follows:
 
-```
+{% highlight html %}
 <!-- Table Head updates -->
 <thead>
   <tr>
@@ -142,11 +142,11 @@ Now we have a place to store this data, lets allow it to have values saved there
     <td ng-repeat="column in c.schema.columns"></td>
   </tr>
 </tbody>
-```
+{% endhighlight %}
 
 The final thing to do is implement the functions defined in this update.
 
-```
+{% highlight javascript %}
 $scope.addRow = function() {
   c.schema.rows.push({});
 }
@@ -158,7 +158,7 @@ $scope.removeRow = function(index) {
 $scope.save = function() {
   c.g_form.setValue(c.schema.field, JSON.stringify(c.schema));
 }
-```
+{% endhighlight %}
 
 ### Additional Features
 
