@@ -4,10 +4,11 @@ date:   2019-03-07 00:00:00
 header:
   image: /assets/images/splash/snow-widget-editor.png
   image_description: "ServiceNow Widget Editor"
+toc: true
 ---
 Since the Service Portal was brought in during the Helsinki release you have been able to add widgets to catalog variables through the use of the *widget* field. This allowed you to put in a custom component onto the form in place of a regular field. This is great but it came with one major issue.
 
-## The problem
+## The Problem
 
 Almost every Service Portal developer has come across this issue in one way or another. You have many forms to display and they all require this *one* new bit of functionality, but it is slightly different per form. This is an issue because it means you either have to duplicate the functionality for each form, or you find a way to make it generic and change it per configuration on the variable.
 
